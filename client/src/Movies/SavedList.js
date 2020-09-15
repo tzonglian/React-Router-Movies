@@ -1,4 +1,7 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
+import {Route} from 'react-router-dom'
+import {BrowserRouter as Router} from 'react-router-dom'
 
 export default function SavedList(props) {
   return (
@@ -7,7 +10,10 @@ export default function SavedList(props) {
       {props.list.map(movie => (
         <span className="saved-movie">{movie.title}</span>
       ))}
-      <div className="home-button">Home</div>
+      <Link to={`/`}>
+        <div className="home-button">Home
+        </div>
+      </Link>
     </div>
   );
 }
