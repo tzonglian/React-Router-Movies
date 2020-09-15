@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {Route, Link, Switch} from 'react-router-dom'
+import {useRouteMatch} from 'react-router-dom'
 import axios from 'axios';
 
 import Movie from './Movies/Movie'
@@ -30,15 +31,13 @@ export default function App () {
     // This is stretch. Prevent the same movie from being "saved" more than once
   };
 
-
-
   return (
     <div>
       <SavedList list={[ /*This is stretch*/ ]} />
       <Switch>
         
         <Route path='/movies/:id'>
-          <Movie />
+          <Movie movies={movieList} />
         </Route>
 
         <Route path='/'>

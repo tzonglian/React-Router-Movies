@@ -4,11 +4,15 @@ import {useParams, useRouteMatch} from 'react-router-dom'
 
 export default function Movie(props) {
   const [movie, setMovie] = useState();
-
+  const {movies} = props
   // Change ^^^ that line and use a hook to obtain the :id parameter from the URL
-  //let id = 1;
-  const {id} = useParams;
-  const {url} = useRouteMatch()
+  let id = 1;
+  // const {id} = useParams; 
+  // console.log('props: ',props)
+  const params = useParams;
+  console.log(params)
+  // const {url} = useRouteMatch()
+  id = params.id
 
   useEffect(() => {
     axios
@@ -29,13 +33,18 @@ export default function Movie(props) {
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = evt => { }
 
+  // const movie = movies.find(it => {
+  //   return it.td == id
+  // }) || {}
+
   if (!movie) {
     return <div>(Loading movie information...)</div>;
   }
 
   const { title, director, metascore, stars } = movie;
   
-  console.log(movie)
+  debugger
+
   return (
     <div className="save-wrapper">
       <div className="movie-card">
