@@ -9,10 +9,10 @@ export default function Movie(props) {
   let id = 1;
   // const {id} = useParams; 
   // console.log('props: ',props)
-  const params = useParams;
-  console.log(params)
+  // const params = useParams;
+  // console.log(params)
   // const {url} = useRouteMatch()
-  id = params.id
+  // id = params.id
 
   useEffect(() => {
     axios
@@ -42,8 +42,6 @@ export default function Movie(props) {
   }
 
   const { title, director, metascore, stars } = movie;
-  
-  debugger
 
   return (
     <div className="save-wrapper">
