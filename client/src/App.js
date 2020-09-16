@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import {Route, Link, Switch} from 'react-router-dom'
-import {useRouteMatch} from 'react-router-dom'
 import axios from 'axios';
 
 import Movie from './Movies/Movie'
@@ -37,7 +36,7 @@ export default function App () {
       <Switch>
         
         <Route path='/movies/:id'>
-          <Movie movies={movieList} />
+          <Movie />
         </Route>
 
         <Route path='/'>
